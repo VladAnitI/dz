@@ -8,7 +8,7 @@ const app = express();
 mongoose.connect(process.env.CONNECTION_LINK, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
-});
+}).then(() => {console.log('Connected')}).catch(err => {console.error(err)})
 
 app.use(
 	cors({
